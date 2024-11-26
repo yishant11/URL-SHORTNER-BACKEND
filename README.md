@@ -4,13 +4,13 @@ A simple and efficient URL shortener API built with Node.js, Express, and MongoD
 
 ## Deployment Link
 ```bash
-https://shorturl-zhlq.onrender.com/
+https://url-shortner-backend-he4o.onrender.com
 ```
 
 ## API Documentation
 Access the interactive API documentation at:
 ```bash
-https://shorturl-zhlq.onrender.com/api-docs
+https://url-shortner-backend-he4o.onrender.com/api-docs
 ```
 
 ## Features
@@ -26,7 +26,7 @@ https://shorturl-zhlq.onrender.com/api-docs
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone Your_Repository_URL
 ```
 
 2. Install dependencies:
@@ -42,10 +42,10 @@ cp .env
 4. Update the .env file with your configuration:
 ```
 PORT = 3000
-MONGODB_URI = your_mongodb_connection_string
-BASE_URL= your_base_url for API Documentation
-RATE_LIMIT_WINDOW_MS = 60000
-RATE_LIMIT_MAX_REQUESTS = 100
+MONGODB_URI = YOUR_MONGODB_URI
+BASE_URL= your_base_url
+RATE_LIMIT_WINDOW_MS = 
+RATE_LIMIT_MAX_REQUESTS = 
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ npm run dev
 ## API Endpoints
 
 ### 1. Shorten URL
-- **POST** `https://shorturl-zhlq.onrender.com/shorten`
+- **POST** `https://url-shortner-backend-he4o.onrender.com/shorten`
 - **Body**: 
 ```json
 {
@@ -74,31 +74,29 @@ npm run dev
 - **Response**:
 ```json
 {
-    "shortUrl": "https://shorturl-zhlq.onrender.com/abc123",
-    "shortId": "abc123"
+    "shortUrl": "https://url-shortner-backend-he4o.onrender.com/GeneratedShortid",
+    "shortId": "GeneratedShortid"
 }
 ```
 
 ### 2. Redirect to Original URL
-- **GET** `https://shorturl-zhlq.onrender.com/:shortId`
+- **GET** `https://url-shortner-backend-he4o.onrender.com/:shortId`
 - Redirects to the original URL
 
 ### 3. Get URL Statistics
-- **GET** `https://shorturl-zhlq.onrender.com/stats/:shortId`
+- **GET** `https://url-shortner-backend-he4o.onrender.com/stats/:shortId`
 - **Response**:
 ```json
 {
-    "originalUrl": "https://example.com/very-long-url",
-    "shortId": "abc123",
-    "clicks": 42,
+    "originalUrl": "https://expample.com",
+    "shortId": "GeneratedShortid",
+    "clicks": 0,
     "lastAccessed": "2024-01-01T12:00:00.000Z",
     "createdAt": "2024-01-01T10:00:00.000Z"
 }
 ```
 
 ## Rate Limiting
-
-The API implements rate limiting to prevent fast access to the API. The following rate limits are applied:
 - 100 requests per minute per IP address
 - Configurable through environment variables
 
